@@ -37,6 +37,12 @@ class BasicFormBuilder {
 
 		return $this->formGroup($label, $name, $control);
 	}
+	public function translatetext($label, $name, $trans, $value = null) {
+
+		$control = $this->builder->translatetext($name, $trans)->value($value);
+		$label = $label . ' [' . $trans . ']';
+		return $this->formGroup($label, $name, $control);
+	}
 
 	public function password($label, $name) {
 		$control = $this->builder->password($name);
@@ -106,6 +112,12 @@ class BasicFormBuilder {
 
 	public function textarea($label, $name) {
 		$control = $this->builder->textarea($name);
+
+		return $this->formGroup($label, $name, $control);
+	}
+	public function translatetextarea($label, $name, $trans) {
+		$control = $this->builder->translatetextarea($name, $trans);
+		$label = $label . ' [' . $trans . ']';
 
 		return $this->formGroup($label, $name, $control);
 	}
