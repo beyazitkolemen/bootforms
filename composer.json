@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-0": {
-            "AdamWathan\\BootForms": "src/"
+            "BeyazitKolemen\\BootForms": "src/"
         }
     },
     "minimum-stability": "stable"
