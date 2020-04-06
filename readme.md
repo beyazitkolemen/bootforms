@@ -36,7 +36,7 @@ Modify the `providers` array in `config/app.php` to include the `BootFormsServic
 ```php
 'providers' => [
     //...
-    'AdamWathan\BootForms\BootFormsServiceProvider'
+    'BeyazitKolemen\BootForms\BootFormsServiceProvider'
   ],
 ```
 
@@ -45,7 +45,7 @@ Add the `BootForm` facade to the `aliases` array in `config/app.php`:
 ```php
 'aliases' => [
     //...
-    'BootForm' => 'AdamWathan\BootForms\Facades\BootForm'
+    'BootForm' => 'BeyazitKolemen\BootForms\Facades\BootForm'
   ],
 ```
 
@@ -60,19 +60,19 @@ BootForm::text('Email', 'email');
 Usage outside of Laravel is a little trickier since there's a bit of a dependency stack you need to build up, but it's not too tricky.
 
 ```php
-$formBuilder = new AdamWathan\Form\FormBuilder;
+$formBuilder = new BeyazitKolemen\Form\FormBuilder;
 
 $formBuilder->setOldInputProvider($myOldInputProvider);
 $formBuilder->setErrorStore($myErrorStore);
 $formBuilder->setToken($myCsrfToken);
 
-$basicBootFormsBuilder = new AdamWathan\BootForms\BasicFormBuilder($formBuilder);
-$horizontalBootFormsBuilder = new AdamWathan\BootForms\HorizontalFormBuilder($formBuilder);
+$basicBootFormsBuilder = new BeyazitKolemen\BootForms\BasicFormBuilder($formBuilder);
+$horizontalBootFormsBuilder = new BeyazitKolemen\BootForms\HorizontalFormBuilder($formBuilder);
 
-$bootForm = new AdamWathan\BootForms\BootForm($basicBootFormsBuilder, $horizontalBootFormsBuilder);
+$bootForm = new BeyazitKolemen\BootForms\BootForm($basicBootFormsBuilder, $horizontalBootFormsBuilder);
 ```
 
-> Note: You must provide your own implementations of `AdamWathan\Form\OldInputInterface` and `AdamWathan\Form\ErrorStoreInterface` when not using the implementations meant for Laravel.
+> Note: You must provide your own implementations of `BeyazitKolemen\Form\OldInputInterface` and `BeyazitKolemen\Form\ErrorStoreInterface` when not using the implementations meant for Laravel.
 
 ## Using BootForms
 
