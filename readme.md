@@ -1,23 +1,6 @@
-> **Important: This package is not actively maintained.** For bug fixes and new features, please fork.
 
 BootForms
 ===============
-
-[![This Project Has Been Deprecated.](http://www.repostatus.org/badges/0.1.0/abandoned.svg)](http://www.repostatus.org/#abandoned)
-[![Code Climate](https://codeclimate.com/github/adamwathan/bootforms/badges/gpa.svg)](https://codeclimate.com/github/adamwathan/bootforms)
-[![Coverage Status](https://coveralls.io/repos/adamwathan/bootforms/badge.svg?branch=master)](https://coveralls.io/r/adamwathan/bootforms?branch=master)
-
-BootForms builds on top of my more general [Form](https://github.com/adamwathan/form) package by adding another layer of abstraction to rapidly generate markup for standard Bootstrap 3 forms. Probably not perfect for your super custom branded ready-for-release apps, but a *huge* time saver when you are still in the prototyping stage!
-
-- [Installation](#installing-with-composer)
-- [Using BootForms](#using-bootforms)
-    - [Basic Usage](#basic-usage)
-    - [Customizing Elements](#customizing-elements)
-    - [Reduced Boilerplate](#reduced-boilerplate)
-    - [Automatic Validation State](#automatic-validation-state)
-    - [Horizontal Forms](#horizontal-forms)
-    - [Additional Tips](#additional-tips)
-- [Related Resources](#related-resources)
 
 ## Installing with Composer
 
@@ -36,7 +19,7 @@ Modify the `providers` array in `config/app.php` to include the `BootFormsServic
 ```php
 'providers' => [
     //...
-    'BeyazitKolemen\BootForms\BootFormsServiceProvider'
+    BeyazitKolemen\BootForms\BootFormsServiceProvider::class,
   ],
 ```
 
@@ -45,7 +28,7 @@ Add the `BootForm` facade to the `aliases` array in `config/app.php`:
 ```php
 'aliases' => [
     //...
-    'BootForm' => 'BeyazitKolemen\BootForms\Facades\BootForm'
+    'BootForm' => BeyazitKolemen\BootForms\Facades\BootForm::class,
   ],
 ```
 
