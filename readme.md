@@ -60,8 +60,12 @@ Laravel Translateble eklentisinde aktif kullandığınız dilleri aşağıdaki �
                 <div class="row">
                     <div class="col-sm-12 col-xs-12">
                         <ul class="nav nav-tabs  bar_tabs" role="tablist">
+
                             @foreach(config('translatable.locales') as $count => $langs )
-                            <li role="presentation" @if($count==0) class="active" @endif style="text-transform: uppercase;"><a href="#{{$langs}}" aria-controls="{{$langs}}" role="tab" data-toggle="tab">{{$langs}}</a></li>
+                            <li role="presentation" @if($count==0) class="active" @endif style="text-transform: uppercase;">
+                            <a href="#{{$langs}}" aria-controls="{{$langs}}" role="tab" data-toggle="tab">{{$langs}}</a>
+                            </li>
+
                             @endforeach
                         </ul>
                     </div>
@@ -71,11 +75,16 @@ Laravel Translateble eklentisinde aktif kullandığınız dilleri aşağıdaki �
                 <div class="tab-content">
                     @foreach(config('translatable.locales') as $count => $langs )
                     <div role="tabpanel" class="tab-pane @if($count == 0) active @endif" id="{{$langs}}">
+
                         {!! BootForm::translatetext('Title', 'title',$langs) !!}
                         {!! BootForm::translatetextarea('Detail', 'detail',$langs) !!}
+
+
                     </div>
                     @endforeach
                 </div>
+
+
                 {!! BootForm::text('No Trans Title', 'no_trans_title') !!}
                 {!! BootForm::textarea('No Trans Detail', 'no_trans_detail') !!}
                 {!! BootForm::submit('Submit')->class('btn btn-success') !!}
