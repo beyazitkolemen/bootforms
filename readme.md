@@ -41,10 +41,11 @@ Bootform Eklentisinden farklı olarak birden fazla dil için kullanımda;
 şeklinde kullanabilirsiniz.
 
 Laravel Translateble eklentisinde aktif kullandığınız dilleri aşağıdaki şekilde çağırabilirsiniz.
-    
+```php
   @foreach(config('translatable.locales') as $count => $langs )
     {{$langs}}
     @endforeach
+```
 
 **Örnek Kullanım:
 **
@@ -75,8 +76,8 @@ Laravel Translateble eklentisinde aktif kullandığınız dilleri aşağıdaki �
                     </div>
                     @endforeach
                 </div>
-                {!! BootForm::text('Test', 'test') !!}
-                {!! BootForm::textarea('Detail', 'detail') !!}
+                {!! BootForm::text('No Trans Title', 'no_trans_title') !!}
+                {!! BootForm::textarea('No Trans Detail', 'no_trans_detail') !!}
                 {!! BootForm::submit('Submit')->class('btn btn-success') !!}
                 {!! BootForm::close() !!}
 Bind işlemi için (Veri Düzenleme):
