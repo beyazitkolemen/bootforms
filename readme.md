@@ -35,20 +35,20 @@ Eğer laravel kullanıyorsanız aşağıdaki şekilde config/app.php dosyasına 
 ```
 Bootform Eklentisinden farklı olarak birden fazla dil için kullanımda;
 ```php
-    {!! BootForm::translatetext('Detail', 'detail','tr') !!}
-    {!! BootForm::translatetextarea('Detail', 'textareadata','tr') !!}
+    {!! BootForm::translatetext('Text', 'text','tr') !!}
+    {!! BootForm::translatetextarea('Textarea', 'Textarea','tr') !!}
   ```
 şeklinde kullanabilirsiniz.
 
 Laravel Translateble eklentisinde aktif kullandığınız dilleri aşağıdaki şekilde çağırabilirsiniz.
 ```php
   @foreach(config('translatable.locales') as $count => $langs )
-    {{$langs}}
+    {{$langs}} // tr,en,ru döner
     @endforeach
 ```
 
 **Örnek Kullanım:
-**
+```php
 
      <?php
         $columnSizes = [
@@ -80,8 +80,10 @@ Laravel Translateble eklentisinde aktif kullandığınız dilleri aşağıdaki �
                 {!! BootForm::textarea('No Trans Detail', 'no_trans_detail') !!}
                 {!! BootForm::submit('Submit')->class('btn btn-success') !!}
                 {!! BootForm::close() !!}
+```
 Bind işlemi için (Veri Düzenleme):
 
+```php
     {!! BootForm::bind($data)!!}
-
+```
 gibi eklediğinizde çeviri dilleri otomatik olarak doldurulacaktır.
