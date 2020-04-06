@@ -36,7 +36,7 @@ Modify the `providers` array in `config/app.php` to include the `BootFormsServic
 ```php
 'providers' => [
     //...
-    'BeyazitKolemen\BootForms\BootFormsServiceProvider'
+    BeyazitKolemen\BootForms\BootFormsServiceProvider::class,
   ],
 ```
 
@@ -45,7 +45,7 @@ Add the `BootForm` facade to the `aliases` array in `config/app.php`:
 ```php
 'aliases' => [
     //...
-    'BootForm' => 'BeyazitKolemen\BootForms\Facades\BootForm'
+    'BootForm' => BeyazitKolemen\BootForms\Facades\BootForm::class,
   ],
 ```
 
